@@ -4,6 +4,13 @@ fun main() {
     var i = 0
     while (i < 5){
 
+        i++
+
+        if(i == 3){
+            continue
+            //break
+        }
+
         val titular: String = "Bruno $i"
         val numeroConta: Int = 1000 + i
         var saldo = i + 10.0
@@ -12,8 +19,6 @@ fun main() {
         println("número da conta: $numeroConta")
         println("saldo da conta: $saldo")
         println()
-
-        i++
     }
 
     //for (i in 1..5) {
@@ -31,6 +36,18 @@ fun main() {
 
         //testaCondicoes(saldo)
     }*/
+
+    testaLoopAninhado()
+}
+
+fun testaLoopAninhado() {
+    loopExterno@ for (i in 1..100) {
+        println("i $i")
+        for (j in 1..100) {
+            println("j $j")
+            if (j == 5) break@loopExterno
+        }
+    }
 }
 
 fun testaCondicoes(saldo: Double) {
