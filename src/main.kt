@@ -1,36 +1,58 @@
-fun main(){
+fun main() {
     println("Bem vindo ao Bytebank")
 
-    val titular: String = "Bruno"
-    val numeroConta: Int = 1000
-    var saldo = 0.0
-    saldo = 100 + 2.0
-    saldo += 200
-    saldo -= 1000
+    var i = 0
+    while (i < 5){
 
-    println("titular: $titular")
-    println("número da conta: $numeroConta")
-    println("saldo da conta: $saldo")
+        val titular: String = "Bruno $i"
+        val numeroConta: Int = 1000 + i
+        var saldo = i + 10.0
 
-//    if (saldo > 0.0){
-//        println("conta é positiva")
-//    }else if(saldo == 0.0){
-//        println("conta é neutra")
-//    }else{
-//        println("conta é negativa")
-//    }
+        println("titular: $titular")
+        println("número da conta: $numeroConta")
+        println("saldo da conta: $saldo")
+        println()
 
-//    when {
-//        saldo > 0.0 -> {
-//            println("conta é positiva")
-//        }
-//        saldo == 0.0 -> {
-//            println("conta é neutra")
-//        }
-//        else -> {
-//            println("conta é negativa")
-//        }
-//    }
+        i++
+    }
+
+    //for (i in 1..5) {
+    //for(i in 5 downTo 1 step 2){
+    /*for(i in 5 downTo 1){
+
+        val titular: String = "Bruno $i"
+        val numeroConta: Int = 1000 + i
+        var saldo = i + 10.0
+
+        println("titular: $titular")
+        println("número da conta: $numeroConta")
+        println("saldo da conta: $saldo")
+        println()
+
+        //testaCondicoes(saldo)
+    }*/
+}
+
+fun testaCondicoes(saldo: Double) {
+    if (saldo > 0.0) {
+        println("conta é positiva")
+    } else if (saldo == 0.0) {
+        println("conta é neutra")
+    } else {
+        println("conta é negativa")
+    }
+
+    when {
+        saldo > 0.0 -> {
+            println("conta é positiva")
+        }
+        saldo == 0.0 -> {
+            println("conta é neutra")
+        }
+        else -> {
+            println("conta é negativa")
+        }
+    }
 
     when {
         saldo > 0.0 -> println("conta é positiva")
