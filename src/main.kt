@@ -22,6 +22,8 @@ fun main() {
     println(contaFran.titular)
     println(contaFran.numero)
     println(contaFran.saldo)
+
+    testaValorEReferencia()
 }
 
 class Conta {
@@ -30,7 +32,27 @@ class Conta {
     var saldo = 0.0
 }
 
-private fun testaLacos() {
+fun testaValorEReferencia(){
+    val numeroX = 10
+    var numeroY = numeroX
+    numeroY++
+
+    println("numeroX $numeroX")
+    println("numeroY $numeroY")
+
+    val contaJoao = Conta()
+    contaJoao.titular = "João"
+    var contaMaria = contaJoao
+    contaMaria.titular = "Maria"
+
+    println("titular conta joao: ${contaJoao.titular}")
+    println("titular conta maria: ${contaMaria.titular}")
+
+    println(contaJoao)
+    println(contaMaria)
+}
+
+fun testaLacos() {
     var i = 0
     while (i < 5) {
 
