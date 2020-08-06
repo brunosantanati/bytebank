@@ -56,16 +56,16 @@ fun main() {
     println("Saldo Fran ${contaFran.saldo}")
 }
 
-class Conta {
-    var titular = ""
-    var numero = 0
+class Conta(titular: String, numero: Int) {
+    var titular = titular
+    var numero = numero
     var saldo = 0.0
         private set
 
-    constructor(titular: String, numero: Int){
-        this.titular = titular
-        this.numero = numero
-    }
+//    constructor(titular: String, numero: Int){
+//        this.titular = titular
+//        this.numero = numero
+//    }
 
     fun deposita(valor: Double){
         if(valor > 0) {
