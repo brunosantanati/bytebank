@@ -56,9 +56,7 @@ fun main() {
     println("Saldo Fran ${contaFran.saldo}")
 }
 
-class Conta(titular: String, numero: Int) {
-    var titular = titular
-    var numero = numero
+class Conta(var titular: String, var numero: Int) {
     var saldo = 0.0
         private set
 
