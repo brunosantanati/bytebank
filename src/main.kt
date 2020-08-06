@@ -65,6 +65,10 @@ class Conta(var titular: String, var numero: Int) {
 //        this.numero = numero
 //    }
 
+    init {
+        println("Testando init $this")
+    }
+
     fun deposita(valor: Double){
         if(valor > 0) {
             this.saldo += valor
