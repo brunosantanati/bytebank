@@ -48,6 +48,16 @@ fun main() {
     println("saque em excesso na conta da Fran")
     contaFran.saca(500.0)
     println(contaFran.saldo)
+
+    println("Transferência da conta da Fran para o Alex")
+    if(contaFran.transfere(100.0, contaAlex)){
+        println("Transferência sucedida")
+    }else{
+        println("Falha na transferência")
+    }
+
+    println("Saldo Alex ${contaAlex.saldo}")
+    println("Saldo Fran ${contaFran.saldo}")
 }
 
 class Conta {
@@ -63,6 +73,15 @@ class Conta {
         if(saldo >= valor){
             saldo -= valor
         }
+    }
+
+    fun transfere(valor: Double, destino: Conta): Boolean{
+        if(saldo >= valor){
+            saldo -= valor
+            destino.saldo += valor
+            return true
+        }
+        return false
     }
 }
 
