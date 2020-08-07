@@ -4,7 +4,7 @@ fun main() {
     val contaAlex = Conta("Alex", 1000)
     contaAlex.deposita(200.0)
 
-    val contaFran = Conta("Fran", 1001)
+    val contaFran = Conta(numero = 1001, teste = 500, titular = "Fran") //se usar label pode mudar a ordem dos parametros
     contaFran.deposita(300.0)
 
     println()
@@ -12,12 +12,14 @@ fun main() {
     println(contaAlex.titular)
     println(contaAlex.numero)
     println(contaAlex.saldo)
+    println(contaAlex.teste)
 
     println()
 
     println(contaFran.titular)
     println(contaFran.numero)
     println(contaFran.saldo)
+    println(contaFran.teste)
 
     println()
 
@@ -46,7 +48,7 @@ fun main() {
     println(contaFran.saldo)
 
     println("Transferência da conta da Fran para o Alex")
-    if(contaFran.transfere(100.0, contaAlex)){
+    if(contaFran.transfere(valor = 100.0, destino = contaAlex)){
         println("Transferência sucedida")
     }else{
         println("Falha na transferência")
@@ -56,7 +58,11 @@ fun main() {
     println("Saldo Fran ${contaFran.saldo}")
 }
 
-class Conta(var titular: String, var numero: Int) {
+class Conta(
+        var titular: String,
+        val numero: Int,
+        val teste: Int = 10 //valor default se não for fornecido o numero, deixa esse argumento como opcional
+) {
     var saldo = 0.0
         private set
 
